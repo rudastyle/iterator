@@ -28,18 +28,18 @@ namespace TimeLoop
 
         public void SetMoveAxis(float axis)
         {
-            _rb.velocity = new Vector2(axis * _moveSpeed, _rb.velocity.y);
+            _rb.linearVelocity = new Vector2(axis * _moveSpeed, _rb.linearVelocity.y);
         }
 
         public void TryJump()
         {
             if (IsGrounded())
-                _rb.velocity = new Vector2(_rb.velocity.x, _jumpForce);
+                _rb.linearVelocity = new Vector2(_rb.linearVelocity.x, _jumpForce);
         }
 
         public void Respawn(Vector2 worldPos)
         {
-            _rb.velocity       = Vector2.zero;
+            _rb.linearVelocity       = Vector2.zero;
             transform.position = worldPos;
         }
 

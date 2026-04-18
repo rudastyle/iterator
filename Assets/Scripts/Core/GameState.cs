@@ -1,4 +1,4 @@
 namespace TimeLoop
 {
-    public enum GameState { Playing, StageClear, GameWon }
+    public enum GameState { Intro, Playing, StageClear, GameWon }
 }

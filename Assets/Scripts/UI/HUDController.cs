@@ -26,13 +26,22 @@ namespace TimeLoop
         static readonly Color ColorWarm = new(1f,    0.60f, 0.20f);
         static readonly Color ColorHot  = new(1f,    0.33f, 0.33f);
 
+        CanvasGroup _cg;
+
+        void Awake()
+        {
+            if (!TryGetComponent(out _cg))
+                _cg = gameObject.AddComponent<CanvasGroup>();
+        }
+
         void Update()
         {
             var gm = GameManager.Instance;
             if (gm == null) return;
 
             bool playing = gm.State == GameState.Playing;
-            gameObject.SetActive(playing || gm.State == GameState.StageClear);
+            bool visible = playing || gm.State == GameState.StageClear;
+            _cg.alpha = visible ? 1f : 0f;
 
             if (!playing) return;
 

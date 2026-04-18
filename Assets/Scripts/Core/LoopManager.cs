@@ -7,7 +7,7 @@ namespace TimeLoop
     /// </summary>
     public class LoopManager : MonoBehaviour
     {
-        [SerializeField] float _duration = 10f;
+        float _duration;
 
         public float LoopTime  { get; private set; }
         public float Duration  => _duration;

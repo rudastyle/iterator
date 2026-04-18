@@ -138,7 +138,12 @@ namespace TimeLoop
             _player.gameObject.layer = 8; // Player layer
             _player.Init(_recorder, _spawn);
 
-            State = GameState.Playing;
+            State = GameState.Intro;
+        }
+
+        public void BeginPlay()
+        {
+            if (State == GameState.Intro) State = GameState.Playing;
         }
 
         // ── Loop Reset ───────────────────────────────────────────────────────────

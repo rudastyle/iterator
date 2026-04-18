@@ -16,6 +16,8 @@ MonoBehaviour:
   hint: Step on the button to open the door
   backgroundColor: {r: 0.08627451, g: 0.12941177, b: 0.24313726, a: 1}
   spawnPoint: {x: 1.875, y: 1.8125}
+  loopDuration: 5
+  maxGhosts: 99
   platforms:
   - center: {x: 10, y: 0.625}
     size: {x: 20, y: 1.25}
@@ -24,6 +26,7 @@ MonoBehaviour:
   buttons:
   - center: {x: 8.59375, y: 4.3125}
     indicatorColor: {r: 0.76862746, g: 0.26666668, b: 0.26666668, a: 1}
+    holdDuration: 0
   door:
     center: {x: 16.90625, y: 2.25}
     size: {x: 0.6875, y: 2}

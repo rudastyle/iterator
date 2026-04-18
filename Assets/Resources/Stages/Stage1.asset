@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 009d51eb03f6e504eb00edefdcf789a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stageName: STAGE 1
+  hint: Step on the button to open the door
+  backgroundColor: {r: 0.08627451, g: 0.12941177, b: 0.24313726, a: 1}
+  spawnPoint: {x: 1.875, y: 1.8125}
+  platforms:
+  - center: {x: 10, y: 0.625}
+    size: {x: 20, y: 1.25}
+  - center: {x: 8.90625, y: 3.84375}
+    size: {x: 4.0625, y: 0.4375}
+  buttons:
+  - center: {x: 8.59375, y: 4.3125}
+    indicatorColor: {r: 0.76862746, g: 0.26666668, b: 0.26666668, a: 1}
+  door:
+    center: {x: 16.90625, y: 2.25}
+    size: {x: 0.6875, y: 2}

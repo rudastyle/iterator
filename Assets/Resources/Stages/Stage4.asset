@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 009d51eb03f6e504eb00edefdcf789a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stageName: STAGE 4
+  hint: "There's a gap in the ground \u2014 the door must open for you to cross"
+  backgroundColor: {r: 0.11764706, g: 0.11764706, b: 0.039215688, a: 1}
+  spawnPoint: {x: 1.25, y: 2.0625}
+  platforms:
+  - center: {x: 3.125, y: 0.625}
+    size: {x: 6.25, y: 1.25}
+  - center: {x: 16.875, y: 0.625}
+    size: {x: 6.25, y: 1.25}
+  - center: {x: 3.125, y: 4.3125}
+    size: {x: 3.75, y: 0.4375}
+  - center: {x: 16.875, y: 4.3125}
+    size: {x: 3.75, y: 0.4375}
+  - center: {x: 10, y: 6.03125}
+    size: {x: 3.75, y: 0.4375}
+  buttons:
+  - center: {x: 2.8125, y: 4.78125}
+    indicatorColor: {r: 0.76862746, g: 0.26666668, b: 0.26666668, a: 1}
+  - center: {x: 16.5625, y: 4.78125}
+    indicatorColor: {r: 0.26666668, g: 0.8, b: 0.26666668, a: 1}
+  - center: {x: 9.6875, y: 6.5}
+    indicatorColor: {r: 1, g: 0.6666667, b: 0.33333334, a: 1}
+  door:
+    center: {x: 10, y: 2.25}
+    size: {x: 0.6875, y: 2}

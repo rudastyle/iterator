@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 009d51eb03f6e504eb00edefdcf789a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stageName: STAGE 2
+  hint: "Both buttons must be pressed at the same time \u2014 use a ghost!"
+  backgroundColor: {r: 0.101960786, g: 0.18039216, b: 0.101960786, a: 1}
+  spawnPoint: {x: 1.875, y: 1.8125}
+  platforms:
+  - center: {x: 10, y: 0.625}
+    size: {x: 20, y: 1.25}
+  - center: {x: 3.28125, y: 3.84375}
+    size: {x: 4.0625, y: 0.4375}
+  - center: {x: 16.71875, y: 3.84375}
+    size: {x: 4.0625, y: 0.4375}
+  buttons:
+  - center: {x: 2.96875, y: 4.3125}
+    indicatorColor: {r: 0.76862746, g: 0.26666668, b: 0.26666668, a: 1}
+  - center: {x: 16.40625, y: 4.3125}
+    indicatorColor: {r: 0.26666668, g: 0.8, b: 0.26666668, a: 1}
+  door:
+    center: {x: 10, y: 2.25}
+    size: {x: 0.6875, y: 2}

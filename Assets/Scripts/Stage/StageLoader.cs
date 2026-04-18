@@ -42,6 +42,7 @@ namespace TimeLoop
                 var pp = go.GetComponent<PressurePlate>();
                 pp.SetColor(b.indicatorColor);
                 pp.SetHoldDuration(b.holdDuration);
+                pp.SetActiveDuration(b.activeDuration);
                 plates[i] = pp;
             }
 

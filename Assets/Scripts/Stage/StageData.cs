@@ -37,6 +37,8 @@ namespace TimeLoop
         public Color   indicatorColor;
         /// <summary>0 = 영구 유지, &gt;0 = 밟고 떠난 뒤 유지되는 초</summary>
         public float   holdDuration;
+        /// <summary>&gt;0 = 밟는 순간 N초 활성, 시간 끝나면 비활성. 나갔다 와야 재트리거.</summary>
+        public float   activeDuration;
     }
 
     [Serializable]

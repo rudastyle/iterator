@@ -41,6 +41,7 @@ namespace TimeLoop
                 var go = Instantiate(_pressurePlatePrefab, b.center, Quaternion.identity, _root);
                 var pp = go.GetComponent<PressurePlate>();
                 pp.SetColor(b.indicatorColor);
+                pp.SetHoldDuration(b.holdDuration);
                 plates[i] = pp;
             }
 

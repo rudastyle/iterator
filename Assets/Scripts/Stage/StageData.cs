@@ -32,6 +32,8 @@ namespace TimeLoop
     {
         public Vector2 center;
         public Color   indicatorColor;
+        /// <summary>0 = 영구 유지, &gt;0 = 밟고 떠난 뒤 유지되는 초</summary>
+        public float   holdDuration;
     }
 
     [Serializable]

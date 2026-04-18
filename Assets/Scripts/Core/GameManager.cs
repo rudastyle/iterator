@@ -71,6 +71,16 @@ namespace TimeLoop
 
         void Update()
         {
+#if UNITY_EDITOR
+            if (Input.GetKeyDown(KeyCode.N))
+            {
+                int next = StageIndex + 1;
+                if (next < _database.stages.Length) LoadStage(next);
+            }
+            if (Input.GetKeyDown(KeyCode.B) && StageIndex > 0)
+                LoadStage(StageIndex - 1);
+#endif
+
             switch (State)
             {
                 case GameState.Playing:

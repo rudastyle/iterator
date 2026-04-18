@@ -121,6 +121,9 @@ $RECYCLE.BIN/
 Thumbs.db
 ehthumbs.db
 
+# Visual Studio
+.vs/
+
 # Rider
 .idea/
 *.sln.iml

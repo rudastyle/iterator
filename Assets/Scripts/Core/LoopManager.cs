@@ -13,6 +13,8 @@ namespace TimeLoop
         public float Duration  => _duration;
         public float TimeLeft  => Mathf.Max(0f, _duration - LoopTime);
 
+        public void SetDuration(float d) => _duration = d;
+
         bool _expired;
 
         public void ResetLoop()

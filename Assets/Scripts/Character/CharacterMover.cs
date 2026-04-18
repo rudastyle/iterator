@@ -20,8 +20,9 @@ namespace TimeLoop
         {
             _rb  = GetComponent<Rigidbody2D>();
             _col = GetComponent<BoxCollider2D>();
-            _rb.constraints             = RigidbodyConstraints2D.FreezeRotation;
-            _rb.collisionDetectionMode  = CollisionDetectionMode2D.Continuous;
+            _rb.constraints            = RigidbodyConstraints2D.FreezeRotation;
+            _rb.collisionDetectionMode = CollisionDetectionMode2D.Continuous;
+            _col.sharedMaterial        = new PhysicsMaterial2D { friction = 0f, bounciness = 0f };
         }
 
         // ── Public API ───────────────────────────────────────────────────────────

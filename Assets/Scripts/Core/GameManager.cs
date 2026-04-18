@@ -124,6 +124,7 @@ namespace TimeLoop
             _ghosts.Clear();
             _recorder.Clear();
             LoopCount = 0;
+            _loopManager.SetDuration(data.loopDuration);
             _loopManager.ResetLoop();
 
             // 스테이지 빌드
@@ -146,7 +147,7 @@ namespace TimeLoop
             if (spawnGhost)
             {
                 var log = _recorder.GetSnapshot();
-                if (log.Count > 0)
+                if (log.Count > 0 && _ghosts.Count < CurrentStage.maxGhosts)
                 {
                     var color   = GhostPalette[_ghosts.Count % GhostPalette.Length];
                     var ghostGO = Instantiate(_ghostPrefab);

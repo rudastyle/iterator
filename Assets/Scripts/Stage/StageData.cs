@@ -15,6 +15,9 @@ namespace TimeLoop
         public Color  backgroundColor;
         public Vector2 spawnPoint;
 
+        public float loopDuration = 10f;
+        public int   maxGhosts    = 99;
+
         public PlatformEntry[] platforms;
         public ButtonEntry[]   buttons;
         public DoorEntry       door;

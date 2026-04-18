@@ -18,9 +18,10 @@ namespace TimeLoop
         public float loopDuration = 10f;
         public int   maxGhosts    = 99;
 
-        public PlatformEntry[] platforms;
-        public ButtonEntry[]   buttons;
-        public DoorEntry       door;
+        public PlatformEntry[]         platforms;
+        public MovingPlatformEntry[]   movingPlatforms;
+        public ButtonEntry[]           buttons;
+        public DoorEntry               door;
     }
 
     [Serializable]
@@ -39,6 +40,16 @@ namespace TimeLoop
         public float   holdDuration;
         /// <summary>&gt;0 = 밟는 순간 N초 활성, 시간 끝나면 비활성. 나갔다 와야 재트리거.</summary>
         public float   activeDuration;
+    }
+
+    [Serializable]
+    public struct MovingPlatformEntry
+    {
+        public Vector2 pointA;
+        public Vector2 pointB;
+        public Vector2 size;
+        public float   speed;
+        public int     requiredCount;
     }
 
     [Serializable]

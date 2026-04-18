@@ -10,14 +10,16 @@ namespace TimeLoop
     {
         [Header("Prefabs")]
         [SerializeField] GameObject _platformPrefab;
+        [SerializeField] GameObject _movingPlatformPrefab;
         [SerializeField] GameObject _pressurePlatePrefab;
         [SerializeField] GameObject _exitDoorPrefab;
 
         Transform _root;
 
         public void Build(StageData data,
-                          out PressurePlate[] plates,
-                          out ExitDoor        door)
+                          out PressurePlate[]  plates,
+                          out MovingPlatform[] movingPlatforms,
+                          out ExitDoor         door)
         {
             // 이전 스테이지 오브젝트 제거
             if (_root != null) Destroy(_root.gameObject);
@@ -26,11 +28,27 @@ namespace TimeLoop
             // 카메라 배경색
             Camera.main.backgroundColor = data.backgroundColor;
 
-            // 플랫폼 생성
+            // 고정 플랫폼 생성
             foreach (var p in data.platforms)
             {
                 var go = Instantiate(_platformPrefab, p.center, Quaternion.identity, _root);
                 go.transform.localScale = new Vector3(p.size.x, p.size.y, 1f);
+            }
+
+            // 이동 플랫폼 생성
+            var mpEntries = data.movingPlatforms;
+            movingPlatforms = new MovingPlatform[mpEntries?.Length ?? 0];
+            if (mpEntries != null)
+            {
+                for (int i = 0; i < mpEntries.Length; i++)
+                {
+                    var mp = mpEntries[i];
+                    var go = Instantiate(_movingPlatformPrefab, mp.pointA, Quaternion.identity, _root);
+                    go.transform.localScale = new Vector3(mp.size.x, mp.size.y, 1f);
+                    var comp = go.GetComponent<MovingPlatform>();
+                    comp.Init(mp.pointA, mp.pointB, mp.speed, mp.requiredCount);
+                    movingPlatforms[i] = comp;
+                }
             }
 
             // 버튼(PressurePlate) 생성

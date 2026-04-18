@@ -30,7 +30,8 @@ namespace TimeLoop
         public int          GhostCount   => _ghosts.Count;
         public float        TimeLeft     => _loopManager.TimeLeft;
         public float        LoopDuration => _loopManager.Duration;
-        public PressurePlate[] CurrentPlates  { get; private set; }
+        public PressurePlate[]  CurrentPlates          { get; private set; }
+        public MovingPlatform[] CurrentMovingPlatforms { get; private set; }
         public Transform        PlayerTransform => _player != null ? _player.transform : null;
 
         // ── Ghost Colors ─────────────────────────────────────────────────────────
@@ -128,8 +129,9 @@ namespace TimeLoop
             _loopManager.ResetLoop();
 
             // 스테이지 빌드
-            _stageLoader.Build(data, out var plates, out var door);
-            CurrentPlates = plates;
+            _stageLoader.Build(data, out var plates, out var movingPlatforms, out var door);
+            CurrentPlates          = plates;
+            CurrentMovingPlatforms = movingPlatforms;
             door.Init(plates);
 
             // 플레이어 스폰
@@ -175,6 +177,9 @@ namespace TimeLoop
             // 텔레포트 후 버튼 접촉 초기화
             foreach (var p in CurrentPlates)
                 p.ResetContacts();
+
+            foreach (var mp in CurrentMovingPlatforms)
+                mp.ResetPlatform();
         }
 
         // ── Door Callback ────────────────────────────────────────────────────────

@@ -1122,6 +1122,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _platformPrefab: {fileID: 8816207074287233363, guid: eb71a1932f2558d42aae7bd6af84fc81, type: 3}
+  _movingPlatformPrefab: {fileID: 1000000000000001, guid: f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1, type: 3}
   _pressurePlatePrefab: {fileID: 1411985060234484662, guid: e8be54a73d2282c4391078072c4a8f65, type: 3}
   _exitDoorPrefab: {fileID: 4072909946843907474, guid: 6194c8d3c5483d845915f67a5f8e7694, type: 3}
 --- !u!114 &685640851

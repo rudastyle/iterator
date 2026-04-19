@@ -32,6 +32,7 @@ namespace TimeLoop
         public float        LoopDuration => _loopManager.Duration;
         public PressurePlate[]  CurrentPlates          { get; private set; }
         public MovingPlatform[] CurrentMovingPlatforms { get; private set; }
+        public SeesawPlatform[] CurrentSeesaws         { get; private set; }
         public Transform        PlayerTransform => _player != null ? _player.transform : null;
 
         // ── Ghost Colors ─────────────────────────────────────────────────────────
@@ -129,9 +130,10 @@ namespace TimeLoop
             _loopManager.ResetLoop();
 
             // 스테이지 빌드
-            _stageLoader.Build(data, out var plates, out var movingPlatforms, out var door);
+            _stageLoader.Build(data, out var plates, out var movingPlatforms, out var seesaws, out var door);
             CurrentPlates          = plates;
             CurrentMovingPlatforms = movingPlatforms;
+            CurrentSeesaws         = seesaws;
             door.Init(plates);
 
             // 플레이어 스폰
@@ -180,6 +182,9 @@ namespace TimeLoop
 
             foreach (var mp in CurrentMovingPlatforms)
                 mp.ResetPlatform();
+
+            foreach (var sw in CurrentSeesaws)
+                sw.ResetSeesaw();
         }
 
         // ── Door Callback ────────────────────────────────────────────────────────

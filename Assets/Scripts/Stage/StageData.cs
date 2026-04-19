@@ -20,6 +20,7 @@ namespace TimeLoop
 
         public PlatformEntry[]         platforms;
         public MovingPlatformEntry[]   movingPlatforms;
+        public SeesawEntry[]           seesaws;
         public ButtonEntry[]           buttons;
         public DoorEntry               door;
     }
@@ -40,6 +41,15 @@ namespace TimeLoop
         public float   holdDuration;
         /// <summary>&gt;0 = 밟는 순간 N초 활성, 시간 끝나면 비활성. 나갔다 와야 재트리거.</summary>
         public float   activeDuration;
+    }
+
+    [Serializable]
+    public struct SeesawEntry
+    {
+        public Vector2 center;
+        public float   length;
+        public float   maxAngle;
+        public float   rotateSpeed;
     }
 
     [Serializable]

@@ -11,6 +11,7 @@ namespace TimeLoop
         [Header("Prefabs")]
         [SerializeField] GameObject _platformPrefab;
         [SerializeField] GameObject _movingPlatformPrefab;
+        [SerializeField] GameObject _seesawPlatformPrefab;
         [SerializeField] GameObject _pressurePlatePrefab;
         [SerializeField] GameObject _exitDoorPrefab;
 
@@ -19,6 +20,7 @@ namespace TimeLoop
         public void Build(StageData data,
                           out PressurePlate[]  plates,
                           out MovingPlatform[] movingPlatforms,
+                          out SeesawPlatform[] seesaws,
                           out ExitDoor         door)
         {
             // 이전 스테이지 오브젝트 제거
@@ -48,6 +50,22 @@ namespace TimeLoop
                     var comp = go.GetComponent<MovingPlatform>();
                     comp.Init(mp.pointA, mp.pointB, mp.speed, mp.requiredCount);
                     movingPlatforms[i] = comp;
+                }
+            }
+
+            // 시소 플랫폼 생성
+            var swEntries = data.seesaws;
+            seesaws = new SeesawPlatform[swEntries?.Length ?? 0];
+            if (swEntries != null)
+            {
+                for (int i = 0; i < swEntries.Length; i++)
+                {
+                    var sw = swEntries[i];
+                    var go = Instantiate(_seesawPlatformPrefab, sw.center, Quaternion.identity, _root);
+                    go.transform.localScale = new Vector3(sw.length, 0.4375f, 1f);
+                    var comp = go.GetComponent<SeesawPlatform>();
+                    comp.Init(sw.maxAngle, sw.rotateSpeed);
+                    seesaws[i] = comp;
                 }
             }
 
